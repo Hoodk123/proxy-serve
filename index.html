@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DemoPro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .img-with-description {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px; /* Add space between image blocks */
+        }
+        .image-description {
+            background-color: rgba(0, 0, 0, 0.7); /* Dark semi-transparent background */
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+            margin-top: 5px; /* Add space between image and description */
+            width: 80%; /* Make description width relative to image */
+            max-width: 300px; /* Ensure description doesn't get too wide */
+        }
+    </style>
+</head>
+<body class="bg-gray-100">
+    <nav class="bg-white shadow-md rounded-b-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="font-bold text-xl text-gray-800">DemoPro</div>
+            <div class="hidden md:flex space-x-6">
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors">Products</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors">Dashboard</a>
+                <a href="#" class="text-gray-700 hover:text-blue-600 transition-colors">Contacts</a>
+            </div>
+            <div class="hidden md:flex">
+                <button class="text-gray-700 hover:bg-gray-100 rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 6a3.75 3.75 0 11-7.5 0 3.75 3.75 0 017.5 0zM4.867 19.125h14.266a1.25 1.25 0 001.157-1.09c-.23-.88-.996-1.53-1.91-1.53H6.68c-.914 0-1.68.65-1.91 1.53a1.25 1.25 0 001.157 1.09z" />
+                    </svg>
+                </button>
+            </div>
+            
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-700 hover:bg-gray-100 rounded-full p-2 focus:outline-none focus:ring-2 focus:ring-blue-500">
+                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+                <div id="mobile-menu" class="hidden absolute top-16 right-0 bg-white shadow-lg rounded-md py-2 px-4 space-y-3 bg-white rounded-md shadow-xl">
+                    <a href="#" class="block text-gray-700 hover:text-blue-600 transition-colors px-4 py-2">Home</a>
+                    <a href="#" class="block text-gray-700 hover:text-blue-600 transition-colors px-4 py-2">Products</a>
+                    <a href="#" class="block text-gray-700 hover:text-blue-600 transition-colors px-4 py-2">Dashboard</a>
+                    <a href="#" class="block text-gray-700 hover:text-blue-600 transition-colors px-4 py-2">Contacts</a>
+                     <a href="#" class="block text-gray-700 hover:text-blue-600 transition-colors px-4 py-2">Account</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main class="container mx-auto px-4 py-10 flex-grow">
+        <h1 class="text-4xl font-bold text-center text-gray-800 mb-8">Welcome to DemoPro</h1>
+        <p class="text-center text-gray-600 mt-4 mb-8">This is a simple demo website showcasing coding photos.</p>
+
+        <div class="flex flex-wrap justify-center gap-6">
+            <div class="img-with-description">
+                <img src="https://source.unsplash.com/300x200/?coding,computer" alt="Coding 1" class="rounded-lg shadow-md">
+                <p class="image-description">A person coding on a computer, surrounded by lines of code.</p>
+            </div>
+            <div class="img-with-description">
+                <img src="https://source.unsplash.com/300x200/?programming,keyboard" alt="Coding 2" class="rounded-lg shadow-md">
+                <p class="image-description">Close-up of a person's hands typing rapidly on a keyboard.</p>
+            </div>
+            <div class="img-with-description">
+                <img src="https://source.unsplash.com/300x200/?developer,workspace" alt="Coding 3" class="rounded-lg shadow-md">
+                <p class="image-description">A developer's workspace with multiple monitors and code on the screens.</p>
+            </div>
+        </div>
+    </main>
+
+    <footer class="bg-gray-200 rounded-t-lg py-6">
+        <div class="container mx-auto px-4 text-center text-sm text-gray-500">
+            &copy; 2025 DemoPro. All rights reserved.
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+
+        if (mobileMenuButton && mobileMenu) {
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+        }
+    </script>
+</body>
+</html>
